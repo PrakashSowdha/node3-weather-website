@@ -16,10 +16,14 @@ const forecast = (latitude, longitude, callback) => {
     } else {
       callback(
         undefined,
-        body.current.weather_descriptions[0] +
-          '. It is currently ' +
+        body.current.weather_descriptions +
+          ' It is currently ' +
           body.current.temperature +
-          ' degress out. There is a ' +
+          ' degress out. The humidity today is ' +
+          body.current.humidity +
+          ' with a visibility of ' +
+          body.current.visibility +
+          '. There is a ' +
           body.current.precip +
           '% chance of rain.'
       );
